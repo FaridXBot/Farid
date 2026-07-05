@@ -5,20 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FARID'S BIG 17 PARTY! 🎉</title>
     
-    <!-- Google Fonts: Font Judul Bold & Fun -->
+    <!-- Google Fonts, FontAwesome, & Animate.css -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome & Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <style>
         :root {
-            --primary-pop: #FF3366; /* Pink Cetar */
-            --secondary-pop: #33CCFF; /* Biru Neon */
-            --yellow-pop: #FFD700; /* Kuning Party */
+            --primary-pop: #FF3366;
+            --secondary-pop: #33CCFF;
+            --yellow-pop: #FFD700;
             --bg-gradient: linear-gradient(135deg, #FFE5EC 0%, #E8F0FE 100%);
             --font-title: 'Fredoka', sans-serif;
             --font-body: 'Poppins', sans-serif;
@@ -38,7 +36,7 @@
             overflow-x: hidden;
         }
 
-        /* --- EFEK BALON TERBANG DI BACKGROUND --- */
+        /* Animasi Balon Terbang */
         .balloon-wrapper {
             position: fixed;
             width: 100%;
@@ -65,13 +63,12 @@
             border-right: 3px solid transparent;
             border-bottom: 8px solid rgba(0,0,0,0.1);
         }
-
         @keyframes floatUp {
             0% { transform: translateY(0) rotate(0deg); left: var(--start-x); }
             100% { transform: translateY(-120vh) rotate(20deg); left: var(--end-x); }
         }
 
-        /* --- CARDS & LAYOUT REUSE --- */
+        /* Desain Kartu Pop-Art */
         section {
             padding: 60px 20px;
             display: flex;
@@ -80,7 +77,6 @@
             position: relative;
             z-index: 1;
         }
-
         .card-festive {
             background: rgba(255, 255, 255, 0.95);
             max-width: 550px;
@@ -93,13 +89,9 @@
             transform: rotate(-1deg);
             transition: transform 0.3s ease;
         }
-        
         .card-rotate-right { transform: rotate(1.5deg); box-shadow: 0 12px 0 var(--yellow-pop), 0 20px 25px rgba(0,0,0,0.1); border-color: var(--secondary-pop); }
         .card-rotate-left { transform: rotate(-1.5deg); box-shadow: 0 12px 0 var(--primary-pop), 0 20px 25px rgba(0,0,0,0.1); border-color: var(--yellow-pop); }
-
-        .card-festive:hover {
-            transform: scale(1.02) rotate(0deg) !important;
-        }
+        .card-festive:hover { transform: scale(1.02) rotate(0deg) !important; }
 
         h1, h2, h3 {
             font-family: var(--font-title);
@@ -107,15 +99,11 @@
             text-shadow: 2px 2px 0px var(--yellow-pop);
             margin-bottom: 15px;
         }
-        
-        .blue-title {
-            color: var(--secondary-pop);
-            text-shadow: 2px 2px 0px var(--primary-pop);
-        }
-
+        .blue-title { color: var(--secondary-pop); text-shadow: 2px 2px 0px var(--primary-pop); }
         h1 { font-size: 2.8rem; }
         h2 { font-size: 2.2rem; }
 
+        /* Tombol Mentul-Mentul */
         .btn-bounce {
             display: inline-block;
             padding: 15px 40px;
@@ -132,11 +120,6 @@
             margin-top: 20px;
             animation: bounce 2s infinite;
         }
-        .btn-bounce:active {
-            transform: translateY(4px);
-            box-shadow: 0 2px 0 #B3002D, 0 4px 10px rgba(255, 51, 102, 0.3);
-        }
-
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
             40% { transform: translateY(-10px); }
@@ -156,6 +139,7 @@
             box-shadow: 2px 2px 0px #000;
         }
 
+        /* Kotak Countdown */
         .countdown-grid {
             display: flex;
             justify-content: center;
@@ -171,16 +155,8 @@
             border: 3px solid #FFF;
             box-shadow: 0 5px 0 rgba(0,0,0,0.15);
         }
-        .box-neon span {
-            display: block;
-            font-size: 1.8rem;
-            font-weight: 800;
-            font-family: var(--font-title);
-        }
-        .box-neon label {
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
+        .box-neon span { display: block; font-size: 1.8rem; font-weight: 800; font-family: var(--font-title); }
+        .box-neon label { font-size: 0.75rem; font-weight: 600; }
 
         .info-party-box {
             background: #FFF;
@@ -191,87 +167,33 @@
             box-shadow: 4px 4px 0px var(--yellow-pop);
             text-align: left;
         }
-        .info-party-box p {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+        .info-party-box p { font-size: 1.1rem; font-weight: 600; margin-bottom: 10px; display: flex; align-items: center; gap: 15px; }
         .info-party-box i {
-            font-size: 1.4rem;
-            color: var(--primary-pop);
-            background: #FFE5EC;
-            padding: 10px;
-            border-radius: 50%;
-            width: 45px; height: 45px;
+            font-size: 1.4rem; color: var(--primary-pop); background: #FFE5EC;
+            padding: 10px; border-radius: 50%; width: 45px; height: 45px;
             display: flex; align-items: center; justify-content: center;
         }
 
-        .gallery-sticker {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-top: 25px;
-        }
-        .photo-frame {
-            background: white;
-            padding: 10px;
-            border: 3px dashed var(--primary-pop);
-            transform: rotate(-3deg);
-            border-radius: 8px;
-            box-shadow: 5px 5px 0px rgba(0,0,0,0.05);
-        }
+        /* Galeri Stiker */
+        .gallery-sticker { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 25px; }
+        .photo-frame { background: white; padding: 10px; border: 3px dashed var(--primary-pop); transform: rotate(-3deg); border-radius: 8px; box-shadow: 5px 5px 0px rgba(0,0,0,0.05); }
         .photo-frame:nth-child(2) { transform: rotate(4deg); border-color: var(--secondary-pop); }
-        .photo-frame img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            border-radius: 4px;
-        }
+        .photo-frame img { width: 100%; height: auto; object-fit: cover; border-radius: 4px; }
 
-        .rsvp-inputs {
-            text-align: left;
-            margin-top: 20px;
-        }
-        .rsvp-inputs label {
-            font-weight: 600;
-            color: var(--primary-pop);
-            display: block;
-            margin-top: 15px;
-            font-family: var(--font-title);
-            font-size: 1.1rem;
-        }
+        /* Form Input */
+        .rsvp-inputs { text-align: left; margin-top: 20px; }
+        .rsvp-inputs label { font-weight: 600; color: var(--primary-pop); display: block; margin-top: 15px; font-family: var(--font-title); font-size: 1.1rem; }
         .rsvp-inputs input, .rsvp-inputs select, .rsvp-inputs textarea {
-            width: 100%;
-            padding: 12px;
-            border: 3px solid var(--secondary-pop);
-            border-radius: 15px;
-            font-family: var(--font-body);
-            font-size: 0.9rem;
-            outline: none;
-            background: #FFF;
-            box-shadow: inset 2px 2px 5px rgba(0,0,0,0.05);
+            width: 100%; padding: 12px; border: 3px solid var(--secondary-pop); border-radius: 15px; font-family: var(--font-body); font-size: 0.9rem; outline: none; background: #FFF;
         }
-        .rsvp-inputs input:focus, .rsvp-inputs select:focus, .rsvp-inputs textarea:focus {
-            border-color: var(--primary-pop);
-        }
+        .rsvp-inputs input:focus, .rsvp-inputs select:focus, .rsvp-inputs textarea:focus { border-color: var(--primary-pop); }
 
+        /* Tombol Audio */
         #music-box {
-            position: fixed;
-            bottom: 20px; right: 20px;
-            background: var(--yellow-pop);
-            border: 3px solid white;
-            width: 50px; height: 50px;
-            border-radius: 50%;
-            display: flex; justify-content: center; align-items: center;
-            cursor: pointer; z-index: 999;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            font-size: 1.3rem;
-            animation: spin 4s infinite linear;
+            position: fixed; bottom: 20px; right: 20px; background: var(--yellow-pop); border: 3px solid white;
+            width: 50px; height: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center;
+            cursor: pointer; z-index: 999; box-shadow: 0 5px 15px rgba(0,0,0,0.2); font-size: 1.3rem; animation: spin 4s infinite linear;
         }
-
         @keyframes spin { 100% { transform: rotate(360deg); } }
 
         @media(max-width: 480px) {
@@ -283,45 +205,47 @@
 </head>
 <body>
 
-    <audio id="party-music" loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" type="audio/mpeg">
+    <!-- AUDIO STREAM -->
+    <audio id="party-music" loop preload="auto">
+        <source src="https://customer-assets.emergentagent.com/job_sweet-seventeen-fest/artifacts/brr3tspq_ssstik.io_1783254269825.mp3" type="audio/mpeg">
     </audio>
 
-    <div id="music-box" onclick="kocokMusik()" style="display: none;">🎉</div>
+    <div id="music-box" onclick="toggleMusik()" style="display: none;">🎉</div>
 
-    <div class="balloon-wrapper">
+    <!-- ELEMEN BALON TERBANG -->
+    <div class="balloon-wrapper" aria-hidden="true">
         <div class="balloon" style="background: #FF3366; --start-x: 10%; --end-x: 20%; animation-delay: 0s;"></div>
         <div class="balloon" style="background: #33CCFF; --start-x: 40%; --end-x: 30%; animation-delay: 2s;"></div>
         <div class="balloon" style="background: #FFD700; --start-x: 70%; --end-x: 80%; animation-delay: 4s;"></div>
         <div class="balloon" style="background: #FF9F43; --start-x: 85%; --end-x: 65%; animation-delay: 1s;"></div>
+        <div class="balloon" style="background: #8A2BE2; --start-x: 25%; --end-x: 55%; animation-delay: 3s;"></div>
+        <div class="balloon" style="background: #FF3366; --start-x: 60%; --end-x: 45%; animation-delay: 5s;"></div>
     </div>
 
-    <!-- 1. COVER -->
+    <!-- 1. COVER SCREEN -->
     <section id="cover-screen" style="height: 100vh;">
         <div class="card-festive animate__animated animate__jackInTheBox">
             <div class="sticker-badge">💥 IT'S PARTY TIME! 💥</div>
             <h1>FARID IS TURNING 17!</h1>
             <p style="font-weight: 600; margin-top: 10px;">Gak rame kalau gak ada lo! Yuk join keseruan pesta ulang tahun Sweet Seventeen gue!</p>
-            <button class="btn-bounce" onclick="letThePartyStart()">BUKA UNDANGAN 🥳</button>
+            <button class="btn-bounce" onclick="bukaUndangan()">BUKA UNDANGAN 🥳</button>
         </div>
     </section>
 
-    <!-- MAIN APP WINDOW -->
+    <!-- MAIN UNDANGAN CONTENT -->
     <div id="party-content" style="display: none;">
 
-        <!-- 2. WELCOME QUOTE -->
+        <!-- 2. WELCOME SECTION -->
         <section>
-            <div class="card-festive card-rotate-right animate__animated animate__bounceIn">
+            <div class="card-festive card-rotate-right">
                 <div class="sticker-badge" style="background: var(--primary-pop); color: white;">✨ NEW CHAPTER ✨</div>
                 <h2 class="blue-title">Welcome to My Day!</h2>
-                <p style="font-weight: bold; font-size: 1.1rem; color: var(--primary-pop); margin-bottom: 10px;">
-                    <i>"Seventeen — a new chapter begins."</i>
-                </p>
-                <p style="font-weight: 500;">Terima kasih telah menjadi bagian dari perjalanan hidupku. Kehadiranmu bakal bikin momen spesial ini jadi makin pecah dan berkesan!</p>
+                <p style="font-weight: bold; font-size: 1.1rem; color: var(--primary-pop); margin-bottom: 10px;"><i>"Seventeen — a new chapter begins."</i></p>
+                <p>Terima kasih telah menjadi bagian dari perjalanan hidupku. Kehadiranmu bakal bikin momen spesial ini jadi makin pecah dan berkesan!</p>
             </div>
         </section>
 
-        <!-- 3. COUNTDOWN TIMER -->
+        <!-- 3. COUNTDOWN -->
         <section>
             <div class="card-festive card-rotate-left">
                 <div class="sticker-badge" style="background: #000; color: #FFF;">⏰ TIMING IS EVERYTHING ⏰</div>
@@ -341,28 +265,26 @@
             <div class="card-festive card-rotate-right">
                 <div class="sticker-badge">📍 WHERE & WHEN 📅</div>
                 <h2>SAVE THE DATE!</h2>
-                
                 <div class="info-party-box">
                     <p><i class="far fa-calendar-alt"></i> <span><strong>Selasa, 7 Juli 2026</strong></span></p>
                     <p><i class="far fa-clock" style="color: var(--secondary-pop); background: #E8F0FE;"></i> <span><strong>15.00 WIB - Selesai</strong></span></p>
                     <p><i class="fas fa-map-marker-alt" style="color: #4CAF50; background: #E8F5E9;"></i> <span><strong>DS Coffee</strong></span></p>
                 </div>
-
-                <a href="https://maps.google.com" target="_blank" class="btn-bounce" style="animation:none; background: var(--secondary-pop); box-shadow: 0 6px 0 #1A8C99;">GAS KE LOKASI 🗺️</a>
+                <a href="https://maps.app.goo.gl/WYZceGpcT9RYQx3i7" target="_blank" class="btn-bounce" style="animation:none; background: var(--secondary-pop); box-shadow: 0 6px 0 #1A8C99;">GAS KE LOKASI 🗺️</a>
             </div>
         </section>
 
-        <!-- 5. STICKER GALLERY -->
+        <!-- 5. IMAGE GALLERY -->
         <section>
             <div class="card-festive card-rotate-left">
-                <div class="sticker-badge" style="background: var(--secondary-pop); color: white;">📸 MEMORIES GALLERY ⚡</div>
+                <div class="sticker-badge" style="background: var(--secondary-pop); color: white;">🎲 RANDOM STUFF 🎲</div>
                 <h2>SNEAK PEEK COY!</h2>
                 <div class="gallery-sticker">
                     <div class="photo-frame">
-                        <img src="https://via.placeholder.com/250x250?text=Farid+Photo+1" alt="Farid Sticker 1">
+                        <img src="https://customer-assets.emergentagent.com/job_sweet-seventeen-fest/artifacts/uz408yn7_Dateng.jpeg" alt="Farid Sticker 1">
                     </div>
                     <div class="photo-frame">
-                        <img src="https://via.placeholder.com/250x250?text=Farid+Photo+2" alt="Farid Sticker 2">
+                        <img src="https://customer-assets.emergentagent.com/job_sweet-seventeen-fest/artifacts/kfb06bbz_GA%20dateng.jpeg" alt="Farid Sticker 2">
                     </div>
                 </div>
             </div>
@@ -373,7 +295,7 @@
             <div class="card-festive card-rotate-right">
                 <div class="sticker-badge" style="background: #FF9F43; color: white;">✍️ ATTENDANCE LIST ✍️</div>
                 <h2>LOCK YOUR SLOT!</h2>
-                <p style="font-weight: 500;">Isi form di bawah buat kirim konfirmasi kehadiran langsung ke WhatsApp Farid!</p>
+                <p>Isi form di bawah buat kirim konfirmasi kehadiran langsung ke WhatsApp Farid!</p>
                 
                 <form class="rsvp-inputs" onsubmit="kirimRSVP(event)">
                     <label>Nama Lo Siapa?</label>
@@ -397,7 +319,7 @@
         <section style="margin-bottom: 60px;">
             <div class="card-festive" style="background: var(--primary-pop); color: white; border-color: white; transform: rotate(0deg); box-shadow: 0 12px 0 #000;">
                 <div class="sticker-badge" style="background: var(--yellow-pop); color: #000; font-size: 1.3rem;">🕺 SEE YA! 🕺</div>
-                <h2 style="color: white; text-shadow: 3px 3px 0px #000; font-size: 2.4rem;">See Lo on the Dance Floor!</h2>
+                <h2 style="color: white; text-shadow: 3px 3px 0px #000; font-size: 2.4rem;">See You at DS Coffee!</h2>
                 <p style="font-size: 1.1rem; font-weight: 600; margin-top: 15px;">Thank you for being part of my special day. See you there! 🤍</p>
             </div>
         </section>
@@ -408,15 +330,20 @@
         const lagu = document.getElementById('party-music');
         const mBox = document.getElementById('music-box');
 
-        function letThePartyStart() {
+        function bukaUndangan() {
             document.getElementById('cover-screen').style.display = 'none';
             document.getElementById('party-content').style.display = 'block';
-            lagu.play().catch(e => console.log("Musik aktif setelah interaksi."));
+            lagu.play().then(() => {
+                mBox.innerText = "🎉";
+            }).catch(e => {
+                console.log("Musik tertahan sistem autoplay browser.");
+                mBox.innerText = "🔇";
+            });
             mBox.style.display = 'flex';
             mulaiCountdown();
         }
 
-        function kocokMusik() {
+        function toggleMusik() {
             if (lagu.paused) {
                 lagu.play();
                 mBox.innerText = "🎉";
@@ -430,12 +357,12 @@
             const target = new Date("July 7, 2026 15:00:00").getTime();
             setInterval(() => {
                 const now = new Date().getTime();
-                const selisih = target - now;
+                const selisih = Math.max(0, target - now);
 
-                const days = Math.floor(selisih / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((selisih % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((selisih % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((selisih % (1000 * 60)) / 1000);
+                const days = String(Math.floor(selisih / (1000 * 60 * 60 * 24))).padStart(2, "0");
+                const hours = String(Math.floor((selisih % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, "0");
+                const minutes = String(Math.floor((selisih % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, "0");
+                const seconds = String(Math.floor((selisih % (1000 * 60)) / 1000)).padStart(2, "0");
 
                 document.getElementById("d").innerText = days;
                 document.getElementById("h").innerText = hours;
@@ -444,21 +371,20 @@
             }, 1000);
         }
 
-        // FUNGSI RSVP VIA WHATSAPP
         function kirimRSVP(e) {
             e.preventDefault();
             
-            // --- PENTING: Ganti nomor di bawah ini dengan nomor WhatsApp lo! ---
-            const nomorWA = "628123456789"; 
+            // NOMOR HP UTAMA SUDAH DIUPDATE DI SINI
+            const nomorWA = "6285211301870"; 
 
             const namaTamu = document.getElementById('name').value;
             const statusHadir = document.getElementById('status').value;
             const ucapanDoa = document.getElementById('msg').value;
 
             const teksPesanan = `Halo Farid! Gue mau konfirmasi kehadiran buat pesta Sweet Seventeen lo nih:%0A%0A` +
-                                `👤 *Nama:* ${namaTamu}%0A` +
-                                `📌 *Status Kehadiran:* ${statusHadir}%0A` +
-                                `💬 *Ucapan:* ${ucapanDoa}`;
+                                `👤 *Nama:* ${encodeURIComponent(namaTamu)}%0A` +
+                                `📌 *Status Kehadiran:* ${encodeURIComponent(statusHadir)}%0A` +
+                                `💬 *Ucapan:* ${encodeURIComponent(ucapanDoa)}`;
 
             window.open(`https://wa.me/${nomorWA}?text=${teksPesanan}`, '_blank');
         }
